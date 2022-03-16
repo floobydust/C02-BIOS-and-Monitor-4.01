@@ -12,4 +12,20 @@ New functions provide for:
  - Enable/Disable Write Cache on the MicroDrive (enabled by default)
  - Multiple Block Read/Write access to the MicroDrive - improves performance
  - Ability to write to the AT28BV256 EEPROM insitu (unlock code sequence added to Monitor)
- - 
+
+MD Util ZIP file comntains a utility for the Realtime Clock and MicroDrive
+ - RTC setup: prompts for date/time and sets up RTC values
+ - Sets up the NVRAM two-byte signature (required by BIOS to find the RTC)
+ - Clears the Alarm functions if desired
+ - Can Read/Display the NVRAM contents
+ - Can Write the NVRAM contents from any 256 bytes of memory (memory not edited via utility)
+
+ - Can show Identify information for the MicroDrive (condensed useful parameters)
+ - Can Read any LBA on the drive, a Next key allows sequential reads
+ - Can Write any LBA on the drive (prompts for this)
+ - Can sequentially Read or Write the entire drive
+ - Provides Performance Benchmarking for Read or Write
+   - Prompts for a starting LBA
+   - Reads or Writes 16MB of sequential blocks
+   - Uses the BIOS multiple block read/write function for a 16KB block (32 LBAs)
+   - Shows the total time in seconds to complete the benchmark (accuracy to 10 milliseconds)
